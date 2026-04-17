@@ -1,6 +1,6 @@
 # QuickLot
 
-QuickLot is a Takealot-inspired marketplace demo built as a separate project alongside the Champs website.
+QuickLot is a Takealot-inspired marketplace demo 
 
 ## What It Includes
 
@@ -31,5 +31,4 @@ If you are using XAMPP, place the project inside `htdocs` and open:
 
 ## Notes
 
-- This project is separate from the Champs website and can be versioned on GitHub independently.
 - Product changes in the admin panel are stored in browser local storage for demo purposes.
