@@ -26,8 +26,8 @@ QuickLot is a Takealot-inspired marketplace demo built as a separate project alo
 
 If you are using XAMPP, place the project inside `htdocs` and open:
 
-- `http://localhost/ChampsDelivery/takealot-inspired/index.html`
-- `http://localhost/ChampsDelivery/takealot-inspired/admin.html`
+- `http://localhost/QuickLot/index.html`
+- `http://localhost/QuickLot/admin.html`
 
 ## Notes
 
