@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickLot Admin</title>
+    <meta name="description" content="Manage QuickLot demo products, pricing, categories, and marketplace visuals from one admin page.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=20260413g">
+</head>
+<body>
+    <main class="admin-page">
+        <section class="admin-hero">
+            <div>
+                <p class="eyebrow">Product Control</p>
+                <h1>QuickLot Product Admin</h1>
+                <p>Update the marketplace catalog, adjust deal framing, and test new products without touching the Champs website.</p>
+            </div>
+            <div class="admin-hero__actions">
+                <a class="ghost-button" href="index.html">Back To Store</a>
+                <a class="ghost-button" href="checkout.html">Open Checkout</a>
+            </div>
+        </section>
+
+        <section class="admin-stats" id="adminStats">
+            <article class="admin-stat">
+                <p class="eyebrow">Catalog Size</p>
+                <strong id="statProducts">0</strong>
+                <span>Total products in the store</span>
+            </article>
+            <article class="admin-stat">
+                <p class="eyebrow">Categories</p>
+                <strong id="statCategories">0</strong>
+                <span>Live category groups in use</span>
+            </article>
+            <article class="admin-stat">
+                <p class="eyebrow">Average Price</p>
+                <strong id="statAveragePrice">R0.00</strong>
+                <span>Average selling price across products</span>
+            </article>
+            <article class="admin-stat">
+                <p class="eyebrow">Best Rated</p>
+                <strong id="statTopRated">-</strong>
+                <span>Current top-rated marketplace pick</span>
+            </article>
+        </section>
+
+        <section class="admin-grid">
+            <article class="admin-card">
+                <p class="eyebrow" id="formEyebrow">Create Product</p>
+                <h2 id="formHeading">Add a new marketplace item</h2>
+                <p class="status-banner is-hidden" id="adminStatus"></p>
+                <form class="admin-form" id="productForm">
+                    <input type="hidden" id="productId">
+
+                    <div class="form-grid">
+                        <label>
+                            Product name
+                            <input type="text" id="productName" required placeholder="Wave ANC Headphones">
+                        </label>
+                        <label>
+                            Category
+                            <select id="productCategory" required>
+                                <option value="electronics">Electronics</option>
+                                <option value="appliances">Appliances</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="home">Home</option>
+                                <option value="beauty">Beauty</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Description
+                        <textarea id="productDescription" rows="4" required placeholder="Short marketplace description with strong shopper value."></textarea>
+                    </label>
+
+                    <div class="form-grid">
+                        <label>
+                            Price
+                            <input type="number" id="productPrice" min="0" step="0.01" required>
+                        </label>
+                        <label>
+                            Old price
+                            <input type="number" id="productOldPrice" min="0" step="0.01" required>
+                        </label>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            Rating
+                            <input type="number" id="productRating" min="0" max="5" step="0.1" required>
+                        </label>
+                        <label>
+                            Reviews
+                            <input type="number" id="productReviews" min="0" step="1" required>
+                        </label>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            Badge
+                            <input type="text" id="productBadge" required placeholder="Top Tech">
+                        </label>
+                        <label>
+                            Save label
+                            <input type="text" id="productSave" required placeholder="Save 32%">
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>Visual gradient</label>
+                        <p class="admin-help">Choose the card palette that best fits this product.</p>
+                        <div class="gradient-grid" id="gradientGrid">
+                            <label class="gradient-option">
+                                <input type="radio" name="productGradient" value="linear-gradient(135deg, #bfd8ff, #f8fbff)" checked>
+                                <span style="--admin-gradient: linear-gradient(135deg, #bfd8ff, #f8fbff);"></span>
+                            </label>
+                            <label class="gradient-option">
+                                <input type="radio" name="productGradient" value="linear-gradient(135deg, #ffd9b5, #fff8f0)">
+                                <span style="--admin-gradient: linear-gradient(135deg, #ffd9b5, #fff8f0);"></span>
+                            </label>
+                            <label class="gradient-option">
+                                <input type="radio" name="productGradient" value="linear-gradient(135deg, #d7cbff, #f8f5ff)">
+                                <span style="--admin-gradient: linear-gradient(135deg, #d7cbff, #f8f5ff);"></span>
+                            </label>
+                            <label class="gradient-option">
+                                <input type="radio" name="productGradient" value="linear-gradient(135deg, #d2ffe8, #f6fffb)">
+                                <span style="--admin-gradient: linear-gradient(135deg, #d2ffe8, #f6fffb);"></span>
+                            </label>
+                            <label class="gradient-option">
+                                <input type="radio" name="productGradient" value="linear-gradient(135deg, #ffd7ea, #fff5fb)">
+                                <span style="--admin-gradient: linear-gradient(135deg, #ffd7ea, #fff5fb);"></span>
+                            </label>
+                            <label class="gradient-option">
+                                <input type="radio" name="productGradient" value="linear-gradient(135deg, #d3e9ff, #f6fbff)">
+                                <span style="--admin-gradient: linear-gradient(135deg, #d3e9ff, #f6fbff);"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="admin-actions">
+                        <button class="primary-button" type="submit" id="saveProductButton">Save Product</button>
+                        <button class="ghost-button" type="button" id="clearFormButton">Clear Form</button>
+                        <button class="danger-button" type="button" id="resetCatalogButton">Reset To Defaults</button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="admin-card">
+                <div class="admin-toolbar">
+                    <div>
+                        <p class="eyebrow">Live Catalog</p>
+                        <h2>Current products</h2>
+                    </div>
+                    <div class="admin-toolbar__actions">
+                        <button class="ghost-button" type="button" id="refreshCatalogButton">Refresh</button>
+                    </div>
+                </div>
+                <div class="admin-list" id="adminList"></div>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/catalog.js?v=20260413g"></script>
+    <script src="js/admin.js?v=20260413g"></script>
+</body>
+</html>

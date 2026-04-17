@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickLot Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=20260413g">
+</head>
+<body>
+    <main class="checkout-page">
+        <section class="checkout-hero">
+            <div>
+                <p class="eyebrow">Checkout Demo</p>
+                <h1>Fast, clean, and marketplace-ready.</h1>
+                <p>This page continues the same shopping flow from the QuickLot storefront and uses the cart saved in local storage.</p>
+            </div>
+            <a class="back-link" href="index.html">Back To Store</a>
+        </section>
+
+        <section class="checkout-steps">
+            <article class="checkout-step is-active">
+                <span>1</span>
+                <div>
+                    <strong>Delivery details</strong>
+                    <p>Add customer and address information</p>
+                </div>
+            </article>
+            <article class="checkout-step" id="paymentStep">
+                <span>2</span>
+                <div>
+                    <strong>Payment choice</strong>
+                    <p>Choose the best payment option</p>
+                </div>
+            </article>
+            <article class="checkout-step" id="reviewStep">
+                <span>3</span>
+                <div>
+                    <strong>Review and place</strong>
+                    <p>Confirm the basket and submit the order</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="checkout-layout">
+            <article class="checkout-card">
+                <p class="eyebrow">Delivery Details</p>
+                <h2>Complete your order</h2>
+                <form id="checkoutForm">
+                    <div class="form-grid">
+                        <label>
+                            Full name
+                            <input type="text" id="customerName" required>
+                        </label>
+                        <label>
+                            Email address
+                            <input type="email" id="customerEmail" required>
+                        </label>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            Phone number
+                            <input type="tel" id="customerPhone" required>
+                        </label>
+                        <label>
+                            City
+                            <select id="customerCity" required>
+                                <option value="">Select a city</option>
+                                <option>Johannesburg</option>
+                                <option>Cape Town</option>
+                                <option>Durban</option>
+                                <option>Pretoria</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Delivery address
+                        <textarea id="customerAddress" rows="4" required placeholder="Street, suburb, building name, apartment number..."></textarea>
+                    </label>
+
+                    <div class="payment-choices">
+                        <label class="payment-choice">
+                            <input type="radio" name="paymentMethod" value="card" checked>
+                            <span>
+                                <strong>Card payment</strong><br>
+                                Secure online payment for a smoother order confirmation flow.
+                            </span>
+                        </label>
+                        <label class="payment-choice">
+                            <input type="radio" name="paymentMethod" value="wallet">
+                            <span>
+                                <strong>Quick wallet</strong><br>
+                                Save time at checkout with one-tap payment experiences.
+                            </span>
+                        </label>
+                        <label class="payment-choice">
+                            <input type="radio" name="paymentMethod" value="eft">
+                            <span>
+                                <strong>Instant EFT</strong><br>
+                                A marketplace-style bank payment option for local checkout flows.
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="checkout-note" id="paymentNote">
+                        Card payment is selected for the fastest checkout experience.
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button type="submit">Place Demo Order</button>
+                        <a class="ghost-button" href="index.html">Continue Shopping</a>
+                    </div>
+                </form>
+
+                <div class="success-card is-hidden" id="successCard">
+                    <p class="eyebrow">Order placed</p>
+                    <h3>Demo order confirmed.</h3>
+                    <p id="successMessage">Your order was placed successfully.</p>
+                </div>
+            </article>
+
+            <aside class="summary-card">
+                <p class="eyebrow">Order Summary</p>
+                <h2>Basket overview</h2>
+                <div class="summary-list" id="summaryList">
+                    <p class="empty-cart">Your cart is empty. Go back and add a few products first.</p>
+                </div>
+                <div class="summary-totals">
+                    <div>
+                        <span>Subtotal</span>
+                        <strong id="summarySubtotal">R0.00</strong>
+                    </div>
+                    <div>
+                        <span>Delivery</span>
+                        <strong id="summaryDelivery">R75.00</strong>
+                    </div>
+                    <div>
+                        <span>Total</span>
+                        <strong id="summaryTotal">R75.00</strong>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="js/checkout.js?v=20260413g"></script>
+</body>
+</html>

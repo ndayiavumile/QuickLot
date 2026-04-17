@@ -1,0 +1,13 @@
+# Editor settings
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Dependency folders
+node_modules/
+
+# Logs
+*.log

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickLot | Everyday Deals Delivered Fast</title>
+    <meta name="description" content="QuickLot is a Takealot-inspired shopping experience with flash deals, trending products, saved items, and a responsive cart.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=20260413g">
+</head>
+<body>
+    <div class="top-strip">
+        <p>Free delivery over R500 in major cities</p>
+        <p>Same-day dispatch on selected deals</p>
+        <p>Pay later options available</p>
+    </div>
+
+    <header class="site-header">
+        <div class="brand-lockup">
+            <div class="brand-mark">Q</div>
+            <div>
+                <p class="brand-eyebrow">Marketplace</p>
+                <h1>QuickLot</h1>
+            </div>
+        </div>
+
+        <form class="search-shell" id="searchForm">
+            <input type="search" id="searchInput" placeholder="Search for phones, appliances, fashion, gaming...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="header-actions">
+            <button class="ghost-button" type="button">Sign In</button>
+            <a class="ghost-button ghost-button--link" href="admin.html">Admin</a>
+            <button class="cart-button" id="cartToggle" type="button">
+                Cart
+                <span id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="category-bar" id="categoryBar">
+        <button class="category-chip is-active" data-category="all" type="button">All</button>
+        <button class="category-chip" data-category="electronics" type="button">Electronics</button>
+        <button class="category-chip" data-category="appliances" type="button">Appliances</button>
+        <button class="category-chip" data-category="gaming" type="button">Gaming</button>
+        <button class="category-chip" data-category="fashion" type="button">Fashion</button>
+        <button class="category-chip" data-category="home" type="button">Home</button>
+        <button class="category-chip" data-category="beauty" type="button">Beauty</button>
+    </nav>
+
+    <main class="page-shell">
+        <section class="hero-grid">
+            <article class="hero-card hero-card--primary">
+                <div class="hero-copy">
+                    <p class="eyebrow">Flash Weekend Deals</p>
+                    <h2>Big basket energy, marketplace speed, and checkout made simple.</h2>
+                    <p>Browse trending electronics, home picks, fashion, and fast-moving specials in a layout inspired by modern retail apps.</p>
+                    <div class="hero-actions">
+                        <a class="primary-button" href="#products">Shop Top Picks</a>
+                        <button class="secondary-button" id="heroCartButton" type="button">Open Cart</button>
+                    </div>
+                </div>
+                <div class="hero-metrics">
+                    <article>
+                        <strong>1,200+</strong>
+                        <span>Marketplace listings</span>
+                    </article>
+                    <article>
+                        <strong>24 hr</strong>
+                        <span>Fast dispatch offers</span>
+                    </article>
+                    <article>
+                        <strong>4.8/5</strong>
+                        <span>Average buyer rating</span>
+                    </article>
+                </div>
+            </article>
+
+            <article class="hero-card hero-card--deal">
+                <p class="eyebrow">Deal Of The Hour</p>
+                <h3>Noise cancelling headphones</h3>
+                <p>Save 32% today only with launch pricing and free delivery.</p>
+                <div class="price-line">
+                    <strong>R1 899</strong>
+                    <span>Was R2 799</span>
+                </div>
+                <button class="inline-buy" type="button" data-product-id="p1">Add Deal To Cart</button>
+            </article>
+        </section>
+
+        <section class="spotlight-grid">
+            <article class="spotlight-card spotlight-card--electric">
+                <p class="eyebrow">Shop by mood</p>
+                <h3>Upgrade your desk setup</h3>
+                <p>Monitors, audio, accessories, and productivity picks for a premium workday look.</p>
+            </article>
+            <article class="spotlight-card spotlight-card--warm">
+                <p class="eyebrow">Fast movers</p>
+                <h3>Kitchen deals with strong value</h3>
+                <p>Air fryers, blenders, and countertop appliances that feel perfect for sale season.</p>
+            </article>
+            <article class="spotlight-card spotlight-card--calm">
+                <p class="eyebrow">Weekend refresh</p>
+                <h3>Home picks that clean up a room fast</h3>
+                <p>Storage, smart cleaning, and visual upgrades for smaller apartments and family homes.</p>
+            </article>
+            <article class="spotlight-card spotlight-card--rose">
+                <p class="eyebrow">Beauty shelf</p>
+                <h3>Self-care bundles with gift energy</h3>
+                <p>Curated products with better pricing, softer palettes, and cart-ready bundle appeal.</p>
+            </article>
+        </section>
+
+        <section class="feature-row">
+            <article>
+                <p class="eyebrow">Why it feels premium</p>
+                <h3>Fast filters</h3>
+                <p>Customers can jump across categories the same way they would in a modern marketplace app.</p>
+            </article>
+            <article>
+                <p class="eyebrow">Built for conversion</p>
+                <h3>Strong deal framing</h3>
+                <p>Cards highlight ratings, savings, delivery timing, and clean pricing hierarchy.</p>
+            </article>
+            <article>
+                <p class="eyebrow">Mobile-first</p>
+                <h3>Quick cart access</h3>
+                <p>The cart drawer and sticky mobile action bar keep shopping momentum going.</p>
+            </article>
+        </section>
+
+        <section class="deals-panel" id="products">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Trending Right Now</p>
+                    <h2>Deals customers would actually stop scrolling for</h2>
+                </div>
+                <p id="resultsSummary">Showing all products.</p>
+            </div>
+
+            <div class="controls-row">
+                <label class="sort-shell" for="sortSelect">
+                    Sort by
+                    <select id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="price_low">Price: Low to high</option>
+                        <option value="price_high">Price: High to low</option>
+                        <option value="rating">Highest rating</option>
+                        <option value="saving">Biggest saving</option>
+                    </select>
+                </label>
+                <p class="controls-copy">Use category chips, search, and sort together to shape the product feed.</p>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <section class="saved-shell">
+            <article class="saved-panel">
+                <div class="section-head section-head--compact">
+                    <div>
+                        <p class="eyebrow">Saved Items</p>
+                        <h2>Wishlist</h2>
+                    </div>
+                    <p>Products customers may come back for later.</p>
+                </div>
+                <div class="saved-grid" id="wishlistGrid">
+                    <p class="empty-cart">Wishlist items will appear here when products are saved.</p>
+                </div>
+            </article>
+
+            <article class="saved-panel">
+                <div class="section-head section-head--compact">
+                    <div>
+                        <p class="eyebrow">Your Activity</p>
+                        <h2>Recently Viewed</h2>
+                    </div>
+                    <p>Good for quick re-entry into the browsing flow.</p>
+                </div>
+                <div class="saved-grid" id="recentGrid">
+                    <p class="empty-cart">Recently viewed products will appear here as you browse.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="signup-banner">
+            <div>
+                <p class="eyebrow">Marketplace Pulse</p>
+                <h2>Get deal alerts before they disappear.</h2>
+                <p>Use this section later for account signups, newsletters, or promo-driven lead capture.</p>
+            </div>
+            <form class="signup-form">
+                <input type="email" placeholder="Enter your email address">
+                <button class="primary-button" type="button">Join Updates</button>
+            </form>
+        </section>
+    </main>
+
+    <aside class="cart-drawer is-hidden" id="cartDrawer" aria-hidden="true">
+        <div class="cart-drawer__backdrop" id="cartBackdrop"></div>
+        <div class="cart-drawer__panel">
+            <div class="cart-drawer__header">
+                <div>
+                    <p class="eyebrow">Your Basket</p>
+                    <h2>QuickLot Cart</h2>
+                </div>
+                <button class="drawer-close" id="cartClose" type="button">Close</button>
+            </div>
+
+            <div class="cart-list" id="cartList">
+                <p class="empty-cart">Your cart is empty. Add a few deals to get started.</p>
+            </div>
+
+            <div class="cart-summary">
+                <div class="shipping-progress">
+                    <div class="shipping-progress__bar">
+                        <span id="shippingFill"></span>
+                    </div>
+                    <p id="shippingMessage">Add products worth R500.00 to unlock free delivery.</p>
+                </div>
+                <div>
+                    <span>Subtotal</span>
+                    <strong id="cartSubtotal">R0.00</strong>
+                </div>
+                <div>
+                    <span>Estimated delivery</span>
+                    <strong id="cartDelivery">R75.00</strong>
+                </div>
+                <div>
+                    <span>Total</span>
+                    <strong id="cartTotal">R75.00</strong>
+                </div>
+                <button class="primary-button primary-button--wide" id="checkoutButton" type="button">Proceed To Checkout</button>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="product-modal is-hidden" id="productModal" aria-hidden="true">
+        <div class="product-modal__backdrop" id="productModalBackdrop"></div>
+        <div class="product-modal__panel">
+            <button class="product-modal__close" id="productModalClose" type="button">Close</button>
+            <div class="product-modal__grid">
+                <div class="product-modal__visual" id="productModalVisual"></div>
+                <div class="product-modal__content">
+                    <p class="eyebrow" id="productModalBadge">Quick View</p>
+                    <h2 id="productModalTitle">Product title</h2>
+                    <p class="product-modal__desc" id="productModalDescription">Product description</p>
+                    <div class="product-modal__meta">
+                        <span id="productModalRating">4.8 stars</span>
+                        <span id="productModalReviews">210 reviews</span>
+                        <span id="productModalShipping">Ships in 24 hrs</span>
+                    </div>
+                    <div class="product-modal__price">
+                        <strong id="productModalPrice">R0.00</strong>
+                        <span id="productModalOldPrice">Was R0.00</span>
+                    </div>
+                    <div class="product-modal__highlights" id="productModalHighlights"></div>
+                    <div class="product-modal__actions">
+                        <button class="inline-buy" id="productModalAdd" type="button">Add to cart</button>
+                        <button class="quick-button" id="productModalSave" type="button">Wishlist</button>
+                    </div>
+                    <a class="product-modal__link" id="productModalDetails" href="product.html">Open full product page</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="toast is-hidden" id="toast"></div>
+
+    <div class="mobile-checkout-bar">
+        <button type="button" id="mobileCartButton">View Cart</button>
+        <strong id="mobileCartSummary">0 items</strong>
+    </div>
+
+    <script src="js/catalog.js?v=20260413g"></script>
+    <script src="js/app.js?v=20260413g"></script>
+</body>
+</html>

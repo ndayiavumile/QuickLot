@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickLot Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=20260413g">
+</head>
+<body>
+    <main class="product-page">
+        <section class="product-page__hero">
+            <div class="admin-hero__actions">
+                <a class="back-link" href="index.html">Back To Store</a>
+                <a class="ghost-button" href="admin.html">Manage Products</a>
+            </div>
+            <div class="product-page__layout">
+                <div class="product-page__visual" id="productHeroVisual"></div>
+                <div class="product-page__content">
+                    <p class="eyebrow" id="productHeroBadge">Top Pick</p>
+                    <h1 id="productHeroTitle">Product Title</h1>
+                    <p class="product-page__desc" id="productHeroDescription">Product description goes here.</p>
+                    <div class="product-page__meta">
+                        <span id="productHeroRating">4.8 stars</span>
+                        <span id="productHeroReviews">210 reviews</span>
+                        <span id="productHeroShipping">Ships in 24 hrs</span>
+                    </div>
+                    <div class="product-page__price">
+                        <strong id="productHeroPrice">R0.00</strong>
+                        <span id="productHeroOldPrice">Was R0.00</span>
+                    </div>
+                    <div class="product-page__cta">
+                        <button class="primary-button" id="productHeroAdd" type="button">Add to cart</button>
+                        <button class="quick-button" id="productHeroSave" type="button">Wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-page__details">
+            <article class="product-detail-card">
+                <p class="eyebrow">Why Buy It</p>
+                <h2>Highlights</h2>
+                <div class="detail-list" id="productHighlights"></div>
+            </article>
+            <article class="product-detail-card">
+                <p class="eyebrow">Marketplace Snapshot</p>
+                <h2>Quick specs</h2>
+                <div class="detail-list" id="productSpecs"></div>
+            </article>
+        </section>
+
+        <section class="product-page__related">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">You may also like</p>
+                    <h2>Related picks from the same category</h2>
+                </div>
+            </div>
+            <div class="saved-grid" id="relatedProducts"></div>
+        </section>
+    </main>
+
+    <div class="toast is-hidden" id="toast"></div>
+
+    <script src="js/catalog.js?v=20260413g"></script>
+    <script src="js/product.js?v=20260413g"></script>
+</body>
+</html>
